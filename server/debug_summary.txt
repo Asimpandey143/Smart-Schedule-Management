@@ -1,0 +1,9 @@
+--- DATABASE SUMMARY ---
+Courses: 0
+Classrooms: 0
+Faculty: 0
+Students: 0
+
+Total Timetable Entries: 0
+
+Assignments per Faculty:

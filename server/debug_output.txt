@@ -1,0 +1,16 @@
+--- DATABASE DEBUG ---
+Total Users: 10
+Total Faculty: 4
+- Aman Jha  (amanjha@gmail.com) [ID: 6995f2d67f8a286cc64b8583]
+- Dr. Alan Turing (alan@univ.edu) [ID: 69968692ff4c33b7bfa5cde9]
+- Dr. Grace Hopper (grace@univ.edu) [ID: 69968692ff4c33b7bfa5cdee]
+- Prof. Richard Feynman (richard@univ.edu) [ID: 69968693ff4c33b7bfa5cdf1]
+
+Aman Details:
+ID: 6995f2d67f8a286cc64b8583
+Name: Aman Jha 
+Email: amanjha@gmail.com
+Role: faculty
+Classes assigned to Aman: 0
+
+Total Timetable Entries: 4

@@ -1,0 +1,32 @@
+--- FULL TIMETABLE DUMP ---
+Total Records in Database: 6
+[1] Day: Wednesday | Time: 15:00-16:00
+    Course: Quantum Mechanics (PH101)
+    Faculty: Dr. Grace Hopper (grace@univ.edu)
+    Room: Lab B
+-----------------------------------
+[2] Day: Tuesday | Time: 14:00-15:00
+    Course: Algorithms (CS202)
+    Faculty: Dr. Grace Hopper (grace@univ.edu)
+    Room: 201
+-----------------------------------
+[3] Day: Wednesday | Time: 10:00-11:00
+    Course: Database Systems (CS301)
+    Faculty: Dr. Grace Hopper (grace@univ.edu)
+    Room: 101
+-----------------------------------
+[4] Day: Monday | Time: 09:00-10:00
+    Course: Data Structures (CS201)
+    Faculty: Dr. Alan Turing (alan@univ.edu)
+    Room: 105
+-----------------------------------
+[5] Day: Monday | Time: 09:00-10:00
+    Course: Data Structures (CS201)
+    Faculty: Aman Jha  (amanjha@gmail.com)
+    Room: 102
+-----------------------------------
+[6] Day: Wednesday | Time: 13:00-14:00
+    Course: Quantum Mechanics (PH101)
+    Faculty: Aman Jha  (amanjha@gmail.com)
+    Room: 201
+-----------------------------------
