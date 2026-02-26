@@ -57,7 +57,7 @@ const MakeAnnouncement = () => {
         if (!window.confirm('Delete this announcement?')) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://127.0.0.1:5001/api/announcements/${id}`, config);
+            await api.delete(`/announcements/${id}`, config);
             setAnnouncements(announcements.filter(a => a._id !== id));
         } catch (err) {
             console.error('Error deleting announcement:', err);

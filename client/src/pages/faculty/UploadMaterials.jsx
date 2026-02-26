@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaCloudUploadAlt, FaFilePdf, FaFilePowerpoint, FaUpload, FaCheckCircle, FaTrashAlt, FaBook, FaFileAlt, FaEye, FaExternalLinkAlt } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
-import api from '../../services/api';
+import api, { API_BASE_URL } from '../../services/api';
 
 const UploadMaterials = () => {
     const { user } = useAuth();
@@ -105,7 +105,7 @@ const UploadMaterials = () => {
 
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://127.0.0.1:5001/api/materials/${id}`, config);
+            await api.delete(`/materials/${id}`, config);
             setMaterials(materials.filter(m => m._id !== id));
         } catch (err) {
             console.error('Error deleting material:', err);
@@ -303,7 +303,7 @@ const UploadMaterials = () => {
                                 )}
 
                                 <a
-                                    href={`http://127.0.0.1:5001${file.filePath}`}
+                                    href={`${API_BASE_URL}${file.filePath}`}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     className="mt-auto w-full py-3 bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400 rounded-xl font-black uppercase tracking-widest text-xs flex items-center justify-center hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-600/30 transition-all group"

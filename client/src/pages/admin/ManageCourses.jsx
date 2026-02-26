@@ -58,7 +58,7 @@ const ManageCourses = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                await axios.delete(`http://127.0.0.1:5001/api/courses/${id}`, config);
+                await api.delete(`/courses/${id}`, config);
                 fetchCourses();
             } catch (error) {
                 console.error('Error deleting course:', error);

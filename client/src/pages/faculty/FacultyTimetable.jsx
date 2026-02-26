@@ -15,7 +15,7 @@ const FacultyTimetable = () => {
             try {
                 const config = { headers: { Authorization: `Bearer ${user.token}` } };
                 // Fetch strictly personal schedule
-                const { data } = await axios.get(`http://127.0.0.1:5001/api/timetable`, config);
+                const { data } = await api.get(`/timetable`, config);
 
                 const dayOrder = { 'Monday': 1, 'Tuesday': 2, 'Wednesday': 3, 'Thursday': 4, 'Friday': 5 };
                 const sorted = data.sort((a, b) => {

@@ -119,7 +119,7 @@ const GenerateTimetable = () => {
         if (!window.confirm('Delete this entry?')) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://127.0.0.1:5001/api/timetable/${id}`, config);
+            await api.delete(`/timetable/${id}`, config);
             fetchTimetable();
         } catch (error) {
             setError('Delete failed');

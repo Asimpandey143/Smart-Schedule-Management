@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { FaUserCircle, FaEnvelope, FaIdCard, FaPhone, FaMapMarkerAlt, FaCamera, FaSave, FaTimes } from 'react-icons/fa';
 import { useAuth } from '../../context/AuthContext';
-import api from '../../services/api';
+import api, { API_BASE_URL } from '../../services/api';
 
 const Profile = () => {
     const { user, updateLocalUser } = useAuth();
@@ -29,7 +29,7 @@ const Profile = () => {
                 department: user.department || '',
                 year: user.year || '',
                 avatar: null,
-                previewAvatar: user.avatar ? `http://127.0.0.1:5001${user.avatar}` : null
+                previewAvatar: user.avatar ? `${API_BASE_URL}${user.avatar}` : null
             });
         }
     }, [user]);

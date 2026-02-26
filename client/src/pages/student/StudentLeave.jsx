@@ -68,7 +68,7 @@ const StudentLeave = () => {
         if (!window.confirm('Are you sure you want to delete this record?')) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://127.0.0.1:5001/api/leaves/${id}`, config);
+            await api.delete(`/leaves/${id}`, config);
             setLeaves(leaves.filter(leave => leave._id !== id));
         } catch (err) {
             console.error('Error deleting leave:', err);

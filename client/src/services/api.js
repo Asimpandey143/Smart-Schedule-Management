@@ -1,8 +1,12 @@
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL || 'http://127.0.0.1:5001/api';
+export const API_BASE_URL = API_URL.replace(/\/api$/, '');
+
 const api = axios.create({
-    baseURL: import.meta.env.VITE_API_URL || 'http://127.0.0.1:5001/api',
+    baseURL: API_URL,
 });
+
 
 // Add a request interceptor to include the token in headers
 api.interceptors.request.use(

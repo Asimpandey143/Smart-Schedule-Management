@@ -54,7 +54,7 @@ const ManageFaculty = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                await axios.delete(`http://127.0.0.1:5001/api/faculty/${id}`, config);
+                await api.delete(`/faculty/${id}`, config);
                 fetchFaculty();
             } catch (error) {
                 console.error('Error deleting faculty:', error);

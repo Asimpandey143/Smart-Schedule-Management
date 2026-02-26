@@ -15,11 +15,36 @@ connectDB();
 
 const app = express();
 
+const PORT = process.env.PORT || 5001;
+
 const corsOptions = {
-    origin: process.env.NODE_ENV === 'production'
-        ? [process.env.FRONTEND_URL]
-        : true, // Allow all in development
+    origin: (origin, callback) => {
+        const allowedOrigins = [
+            process.env.FRONTEND_URL,
+            'http://localhost:5173',
+            'http://127.0.0.1:5173',
+            'https://smart-schedule-management.vercel.app',
+            'https://smart-schedule-management-asimpandey143s-projects.vercel.app'
+        ].filter(Boolean).map(o => o.replace(/\/$/, ""));
+
+        // Allow requests with no origin (like mobile apps or curl)
+        if (!origin || process.env.NODE_ENV !== 'production') {
+            callback(null, true);
+            return;
+        }
+
+        const normalizedOrigin = origin.replace(/\/$/, "");
+
+        if (allowedOrigins.includes(normalizedOrigin)) {
+            callback(null, true);
+        } else {
+            console.error(`CORS blocked for origin: ${origin}`);
+            callback(new Error('Not allowed by CORS'));
+        }
+    },
     credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization']
 };
 
 app.use(cors(corsOptions));
@@ -51,8 +76,6 @@ app.get('/', (req, res) => {
     res.send('API is running...');
 });
 
-const PORT = process.env.PORT || 5001; // Using 5001 as per .env
-
-app.listen(PORT, () => {
-    console.log(`Server running in ${process.env.NODE_ENV} mode on port ${PORT}`);
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Server running in ${process.env.NODE_ENV || 'development'} mode on port ${PORT}`);
 });

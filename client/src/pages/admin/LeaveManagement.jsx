@@ -34,7 +34,7 @@ const LeaveManagement = () => {
         setProcessingId(id);
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.put(`http://127.0.0.1:5001/api/leaves/${id}`, { status }, config);
+            await api.put(`/leaves/${id}`, { status }, config);
 
             // Update local state
             setLeaves(leaves.map(leave =>
@@ -52,7 +52,7 @@ const LeaveManagement = () => {
         if (!window.confirm('Are you sure you want to delete this record? This action cannot be undone.')) return;
         try {
             const config = { headers: { Authorization: `Bearer ${user.token}` } };
-            await axios.delete(`http://127.0.0.1:5001/api/leaves/${id}`, config);
+            await api.delete(`/leaves/${id}`, config);
             setLeaves(leaves.filter(leave => leave._id !== id));
         } catch (err) {
             console.error('Error deleting leave:', err);

@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { FaBell, FaCheckDouble, FaBars } from 'react-icons/fa';
-import api from '../services/api';
+import api, { API_BASE_URL } from '../services/api';
 
 const Navbar = ({ toggleSidebar }) => {
     const { user } = useAuth();
@@ -125,7 +125,7 @@ const Navbar = ({ toggleSidebar }) => {
                     </div>
                     <div className="w-10 h-10 md:w-12 md:h-12 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-white font-black text-lg shadow-lg shadow-indigo-200 dark:shadow-none hover:rotate-3 transition-transform cursor-pointer overflow-hidden border-2 border-white dark:border-slate-700">
                         {user?.avatar ? (
-                            <img src={`${import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:5001'}${user.avatar}`} alt="Avatar" className="w-full h-full object-cover" />
+                            <img src={`${API_BASE_URL}${user.avatar}`} alt="Avatar" className="w-full h-full object-cover" />
                         ) : (
                             user?.name?.charAt(0).toUpperCase()
                         )}

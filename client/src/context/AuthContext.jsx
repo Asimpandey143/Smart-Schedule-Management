@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
             console.error("Login Error:", error);
             const msg = error.response?.data?.message
-                || (error.message === "Network Error" ? "Cannot connect to server (Is it running on port 5001?)" : error.message)
+                || (error.message === "Network Error" ? "Cannot connect to server. Please ensure the backend is running." : error.message)
                 || 'Login failed';
             return { success: false, message: msg };
         }
@@ -51,7 +51,7 @@ export const AuthProvider = ({ children }) => {
         } catch (error) {
             console.error("Registration Error:", error);
             const msg = error.response?.data?.message
-                || (error.message === "Network Error" ? "Cannot connect to server (Is it running on port 5001?)" : error.message)
+                || (error.message === "Network Error" ? "Cannot connect to server. Please ensure the backend is running." : error.message)
                 || 'Registration failed';
             return { success: false, message: msg };
         }

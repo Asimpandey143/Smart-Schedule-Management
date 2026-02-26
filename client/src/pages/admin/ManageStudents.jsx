@@ -60,7 +60,7 @@ const ManageStudents = () => {
                         Authorization: `Bearer ${user.token}`,
                     },
                 };
-                await axios.delete(`http://127.0.0.1:5001/api/students/${id}`, config);
+                await api.delete(`/students/${id}`, config);
                 fetchStudents();
             } catch (error) {
                 console.error('Error deleting student:', error);

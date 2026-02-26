@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { FaDownload, FaFilePdf, FaFileWord, FaFilePowerpoint, FaFileAlt } from 'react-icons/fa';
-import api from '../../services/api';
+import api, { API_BASE_URL } from '../../services/api';
 import { useAuth } from '../../context/AuthContext';
 
 const StudyMaterials = () => {
@@ -57,7 +57,7 @@ const StudyMaterials = () => {
 
     const handleDownload = (filePath, originalName) => {
         // Construct the full URL
-        const url = `http://127.0.0.1:5001${filePath}`;
+        const url = `${API_BASE_URL}${filePath}`;
 
         // Create a temporary link to trigger download
         const link = document.createElement('a');
