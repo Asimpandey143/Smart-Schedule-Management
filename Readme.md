@@ -1,5 +1,6 @@
 # 🎓 Smart Classroom & College ERP System
-##https://smart-schedule-management.onrender.com
+https://smart-schedule-management.onrender.com
+
 A comprehensive web-based College ERP system designed to streamline academic and administrative processes for Students, Faculty, and Administrators. This project features role-based access control, real-time notifications, leave management, and an AI-powered academic assistant.
 
 ## 🚀 Key Features
